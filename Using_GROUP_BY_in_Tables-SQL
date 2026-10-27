@@ -1,1 +1,22 @@
+CREATE DATABASE school;
+USE school;
+CREATE TABLE students(
+  rollno INT PRIMARY KEY,
+  name VARCHAR(50),
+  marks FLOAT,
+  grade CHAR,
+  city VARCHAR(20)
+);
 
+INSERT INTO students
+(rollno, name, marks, grade, city)
+VALUES
+(101, "anas", 98.0, "A", "aligarh"),
+(102, "amir", 97.0, "A", "pune"),
+(103, "farman", 51.0, "C", "aligarh"),
+(104, "shadab", 14.5, "F", "mumbai");
+
+SELECT grade , count(name)
+FROM students
+GROUP BY grade
+ORDER BY COUNT(name);
